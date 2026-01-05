@@ -1,533 +1,540 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tree Soul Genesis (TSG) – Sustainable Green Web3 Ecosystem on Monad</title>
-    <meta name="description" content="Tree Soul Genesis (TSG) is a long-term green Web3 ecosystem on the Monad Network, focused on stability, transparency, community participation, and sustainable growth inspired by nature.">
+    <title>Tree Soul Genesis (TSG) | Sustainable Green Web3 Ecosystem</title>
+    <meta name="description" content="Tree Soul Genesis (TSG) is a green energy token on Monad Network focused on stability, transparency, and sustainable growth inspired by nature.">
     <meta property="og:title" content="Tree Soul Genesis (TSG)">
-    <meta property="og:description" content="Building a sustainable Web3 ecosystem inspired by nature and green energy. Long-term stability, real utility, and community-driven growth on Monad Network.">
+    <meta property="og:description" content="Building a sustainable Web3 ecosystem inspired by green energy and natural balance.">
     <meta property="og:image" content="https://i.imgur.com/cE829Db.png">
-    <meta property="og:url" content="https://yourusername.github.io/your-repo/">
+    <meta property="og:url" content="https://yourdomain.com"> <!-- Replace with your actual domain/GitHub Pages URL -->
     <meta property="og:type" content="website">
-    <link rel="icon" href="https://i.imgur.com/cE829Db.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://i.imgur.com/cE829Db.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
             --bg: #000000;
-            --surface: #121212;
-            --text: #e0e0e0;
+            --bg-secondary: #111111;
+            --text: #ffffff;
             --text-secondary: #aaaaaa;
-            --accent: #4caf50;
-            --accent-light: #66bb6a;
-            --border: #333333;
+            --accent: #00ff41;
+            --accent-hover: #00cc33;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { color: var(--accent-hover); }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        img { max-width: 100%; display: block; }
+        .round { border-radius: 50%; object-fit: cover; }
+        .button {
+            display: inline-block; background: var(--accent); color: #000; padding: 12px 24px;
+            border-radius: 8px; font-weight: 600; transition: background 0.3s;
+            margin: 8px;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .button:hover { background: var(--accent-hover); }
+        .section { padding: 100px 0; }
+        .section-alt { background: var(--bg-secondary); }
+
+        /* Navbar */
+        nav {
+            position: sticky; top: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px);
+            z-index: 1000; border-bottom: 1px solid #222;
         }
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(0,0,0,0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
+        .nav-container {
+            display: flex; align-items: center; justify-content: space-between; padding: 16px 0;
         }
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 0;
+        .logo-wrap {
+            display: flex; align-items: center; gap: 12px;
         }
-        .logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid var(--accent);
-            object-fit: cover;
+        .logo-wrap img { width: 50px; height: 50px; }
+        .logo-wrap span { font-size: 1.4rem; font-weight: 600; }
+        .lang-toggle {
+            display: flex; gap: 12px; font-size: 0.9rem;
         }
-        .nav-menu {
-            display: flex;
-            gap: 32px;
+        .lang-toggle button {
+            background: none; border: none; color: var(--text-secondary); cursor: pointer;
+            padding: 4px 8px; border-radius: 4px;
         }
-        .nav-menu a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+        .lang-toggle button.active { color: var(--accent); background: rgba(0,255,65,0.1); }
+        .menu {
+            display: flex; gap: 32px; list-style: none;
         }
-        .nav-menu a:hover {
-            color: var(--accent);
-        }
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-            color: var(--text);
-        }
-        #nav-toggle { display: none; }
-        section {
-            padding: 100px 0;
-            border-bottom: 1px solid var(--border);
-        }
+        .menu a { color: var(--text-secondary); font-weight: 500; transition: color 0.3s; }
+        .menu a:hover { color: var(--accent); }
+        .hamburger { display: none; font-size: 1.8rem; color: var(--text); cursor: pointer; }
+
+        /* Hero */
         .hero {
-            text-align: center;
-            padding: 140px 0 100px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://i.imgur.com/GuSqb3D.jpeg') center/cover no-repeat;
+            min-height: 100vh; background: url('https://i.imgur.com/GuSqb3D.jpeg') center/cover no-repeat;
+            display: flex; align-items: center; position: relative;
         }
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #fff;
+        .hero::before {
+            content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.75);
         }
-        .hero p {
-            font-size: 20px;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            color: var(--text-secondary);
+        .hero-content {
+            position: relative; text-align: center; max-width: 900px; margin: 0 auto;
         }
+        .hero-logo { width: 180px; height: 180px; margin: 0 auto 24px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 24px; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 32px; color: #ddd; }
         .quick-access {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;
+            margin-top: 40px;
         }
-        .btn {
-            background: var(--accent);
-            color: #fff;
-            padding: 14px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
+
+        /* Grid & Cards */
+        .grid { display: grid; gap: 32px; }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .card {
+            background: var(--bg-secondary); padding: 32px; border-radius: 12px;
+            border: 1px solid #222;
         }
-        .btn:hover {
-            background: var(--accent-light);
-        }
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--accent);
-        }
-        h2 {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 60px;
-            color: #fff;
-        }
-        .section-content {
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: 18px;
-        }
-        .section-content p, .section-content li {
-            margin-bottom: 20px;
-            color: var(--text-secondary);
-        }
+        .team-card img { width: 160px; height: 160px; margin: 0 auto 16px; }
+        .team-card h3 { text-align: center; margin-bottom: 8px; }
+        .team-card p { text-align: center; color: var(--text-secondary); }
+
+        /* Table */
         table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 40px 0;
+            width: 100%; border-collapse: collapse; margin: 24px 0;
         }
         th, td {
-            padding: 16px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
+            padding: 16px; text-align: left; border-bottom: 1px solid #333;
         }
-        th {
-            background: var(--surface);
-            color: var(--accent);
+        th { background: #222; }
+
+        /* Accordion */
+        details { margin-bottom: 16px; }
+        summary {
+            cursor: pointer; font-weight: 600; padding: 16px; background: #222;
+            border-radius: 8px; list-style: none;
         }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
-            margin-top: 40px;
+        summary::-webkit-details-marker { display: none; }
+        details[open] summary { border-radius: 8px 8px 0 0; }
+        details p { padding: 20px; background: var(--bg-secondary); border-radius: 0 0 8px 8px; }
+
+        /* Ecosystem Diagram */
+        .diagram {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px; text-align: center; margin: 40px 0;
         }
-        .team-card {
-            text-align: center;
-            background: var(--surface);
-            padding: 24px;
-            border-radius: 12px;
+        .diagram-box {
+            background: #222; padding: 24px; border-radius: 12px; border: 1px solid var(--accent);
         }
-        .team-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 16px;
-            border: 3px solid var(--accent);
+        .arrow { font-size: 2rem; align-self: center; color: var(--accent); }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a; padding: 60px 0 40px; text-align: center;
         }
         .socials {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 40px;
+            display: flex; justify-content: center; gap: 24px; margin: 32px 0;
         }
-        .socials a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .socials a:hover {
-            color: var(--accent);
-        }
-        details {
-            background: var(--surface);
-            margin-bottom: 12px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        summary {
-            padding: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            background: #1e1e1e;
-        }
-        details[open] summary {
-            border-bottom: 1px solid var(--border);
-        }
-        details p {
-            padding: 20px;
-        }
-        .ecosystem-diagram {
-            background: var(--surface);
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 18px;
-            margin: 40px 0;
-        }
-        footer {
-            text-align: center;
-            padding: 60px 0;
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-        @media (max-width: 768px) {
+        .socials a { font-size: 1.8rem; color: var(--text-secondary); transition: color 0.3s; }
+        .socials a:hover { color: var(--accent); }
+
+        /* Mobile */
+        @media (max-width: 868px) {
             .hamburger { display: block; }
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--bg);
-                flex-direction: column;
-                padding: 20px;
-                border-top: 1px solid var(--border);
+            .menu {
+                position: absolute; top: 100%; left: 0; right: 0;
+                background: rgba(0,0,0,0.95); flex-direction: column;
+                padding: 20px; display: none;
             }
-            #nav-toggle:checked ~ .nav-menu { display: flex; }
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 18px; }
-            h2 { font-size: 30px; }
+            #nav-toggle:checked ~ .menu { display: flex; }
+            .hero h1 { font-size: 2.5rem; }
+            .quick-access { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container navbar">
-            <img src="https://i.imgur.com/cE829Db.png" alt="TSG Logo" class="logo">
-            <input type="checkbox" id="nav-toggle">
-            <label for="nav-toggle" class="hamburger">☰</label>
-            <nav class="nav-menu">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#manifesto">Manifesto</a>
-                <a href="#vision">Vision & Mission</a>
-                <a href="#contract">Contract</a>
-                <a href="#tokenomics">Tokenomics</a>
-                <a href="#roadmap">Roadmap</a>
-                <a href="#ecosystem">Ecosystem</a>
-                <a href="#utility">Utility</a>
-                <a href="#governance">Governance</a>
-                <a href="#team">Team</a>
-                <a href="#partners">Partners</a>
-                <a href="#faq">FAQ</a>
-                <a href="#community">Community</a>
-                <a href="#disclaimer">Legal</a>
-            </nav>
-        </div>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Tree Soul Genesis (TSG)</h1>
-            <p>A green Web3 ecosystem on Monad Network focused on stability, transparency, and sustainable long-term growth inspired by nature.</p>
+    <!-- Navbar -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo-wrap">
+                <img src="https://i.imgur.com/cE829Db.png" alt="TSG Logo" class="round">
+                <span>Tree Soul Genesis</span>
+            </div>
+            <div class="lang-toggle">
+                <button class="active" onclick="showLang('en')">EN</button>
+                <button onclick="showLang('id')">ID</button>
+            </div>
+            <input type="checkbox" id="nav-toggle" hidden>
+            <label for="nav-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#vision">Vision & Mission</a></li>
+                <li><a href="#trust">Trust & Transparency</a></li>
+                <li><a href="#contract">Contract</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#ecosystem">Ecosystem</a></li>
+                <li><a href="#utility">Utility</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#nft">Genesis NFT</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#socials">Socials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content container">
+            <img src="https://i.imgur.com/cE829Db.png" alt="TSG Logo" class="round hero-logo">
+            <h1>TREE SOUL GENESIS (TSG)</h1>
+            <p class="en">TSG is a green energy token focused on stability, ecosystems, and sustainable growth. Our mission is to create long-term value by connecting blockchain technology and inspiration for nature conservation.</p>
+            <p class="id" style="display:none;">TSG adalah token energi hijau yang berfokus pada stabilitas, ekosistem, dan pertumbuhan berkelanjutan. Misi kami adalah menciptakan nilai jangka panjang dengan menghubungkan teknologi blockchain dan inspirasi untuk konservasi alam.</p>
+            <p class="en">Resa leads the long-term vision of Tree Soul Genesis (TSG). With a commitment to green technology and blockchain-based innovation, Resa built TSG from a simple idea into a project running on a strong foundation, an active community, and a real, ever-evolving roadmap.</p>
+            <p class="id" style="display:none;">Resa memimpin visi jangka panjang Tree Soul Genesis (TSG). Dengan komitmen terhadap teknologi hijau dan inovasi berbasis blockchain, Resa membangun TSG dari ide sederhana menjadi proyek yang berjalan pada fondasi kuat, komunitas aktif, dan roadmap nyata yang terus berkembang.</p>
             <div class="quick-access">
-                <a href="https://app.uniswap.org/explore/tokens/monad/0x053686b5b9fd004f17f042e553d14dc0c56c108a?inputCurrency=NATIVE" class="btn" target="_blank">Buy on Uniswap</a>
-                <a href="https://www.geckoterminal.com/monad/pools/0xf86e7124d2e0cfdf3c9dd07416b835daeb6983b3" class="btn" target="_blank">Chart</a>
-                <a href="https://drive.google.com/file/d/1D4l_b2-rlA0Uf0ux0xg1rfCZ7HC5WfhZ/view?usp=drivesdk" class="btn btn-secondary" target="_blank">Whitepaper v1.2</a>
-                <a href="https://t.me/treeSoulGenesis" class="btn btn-secondary" target="_blank">Telegram</a>
-                <a href="https://x.com/tree_genesis" class="btn btn-secondary" target="_blank">Twitter (X)</a>
-                <a href="https://monadscan.com/token/0x053686b5b9Fd004f17f042e553d14DC0C56C108A" class="btn btn-secondary" target="_blank">Monad Explorer</a>
+                <a href="https://app.uniswap.org/explore/tokens/monad/0x053686b5b9fd004f17f042e553d14dc0c56c108a?inputCurrency=NATIVE" target="_blank" rel="noopener" class="button">Buy on Uniswap</a>
+                <a href="https://www.geckoterminal.com/monad/pools/0xf86e7124d2e0cfdf3c9dd07416b835daeb6983b3" target="_blank" rel="noopener" class="button">Chart</a>
+                <a href="https://drive.google.com/file/d/1D4l_b2-rlA0Uf0ux0xg1rfCZ7HC5WfhZ/view?usp=drivesdk" target="_blank" rel="noopener" class="button">Whitepaper v1.2</a>
+                <a href="https://t.me/treeSoulGenesis" target="_blank" rel="noopener" class="button">Telegram</a>
+                <a href="https://x.com/tree_genesis" target="_blank" rel="noopener" class="button">Twitter (X)</a>
+                <a href="https://monadscan.com/token/0x053686b5b9Fd004f17f042e553d14DC0C56C108A" target="_blank" rel="noopener" class="button">Monad Explorer</a>
             </div>
         </div>
     </section>
 
-    <section id="about">
+    <!-- About -->
+    <section class="section" id="about">
         <div class="container">
-            <h2>About Tree Soul Genesis (TSG)</h2>
-            <div class="section-content">
-                <p>Tree Soul Genesis (TSG) is a Monad Network (ERC-20) based green ecosystem project that aims to create long-term value through stability, transparency, and community participation.</p>
-                <p>With a total supply of 93,000,000 TSG, the project adopts a gradual, strong, and sustainable tree-growing philosophy to reflect the growth journey of Web3 projects.</p>
-                <p>TSG connects nature and blockchain technology, delivering a healthy, stable, and community-friendly ecosystem through utilities, NFTs, reward systems, and future Web3 features.</p>
-            </div>
+            <h2 class="en">About TSG</h2>
+            <h2 class="id" style="display:none;">Tentang TSG</h2>
+            <p class="en">Tree Soul Genesis (TSG) is a Monad Network (ERC-20) based green ecosystem project that aims to create long-term value through stability, transparency, and community participation. With a total supply of 93,000,000 TSG, the project adopts a gradual, strong, and sustainable tree-growing philosophy to reflect the growth journey of Web3 projects.<br><br>TSG connects nature and blockchain technology, delivering a healthy, stable, and community-friendly ecosystem through utilities, NFTs, reward systems, and future Web3 features.</p>
+            <p class="id" style="display:none;">Tree Soul Genesis (TSG) adalah proyek ekosistem hijau berbasis Monad Network (ERC-20) yang bertujuan menciptakan nilai jangka panjang melalui stabilitas, transparansi, dan partisipasi komunitas. Dengan total supply 93.000.000 TSG, proyek ini mengadopsi filosofi pertumbuhan pohon yang bertahap, kuat, dan berkelanjutan untuk mencerminkan perjalanan proyek Web3.<br><br>TSG menghubungkan alam dan teknologi blockchain, memberikan ekosistem yang sehat, stabil, dan ramah komunitas melalui utilitas, NFT, sistem reward, dan fitur Web3 masa depan.</p>
         </div>
     </section>
 
-    <section id="manifesto">
+    <!-- Vision & Mission -->
+    <section class="section section-alt" id="vision">
         <div class="container">
-            <h2>Manifesto</h2>
-            <div class="section-content">
-                <p><strong>Building slowly. Growing responsibly. Lasting longer.</strong></p>
-                <p>Tree Soul Genesis (TSG) was born from a simple belief: real ecosystems are not rushed — they are grown.</p>
-                <p>In a space often driven by short-term speculation, Tree Soul Genesis chooses a different path. We believe Web3 should be balanced, transparent, and community-driven, not fueled by hype or empty promises.</p>
-                <p>Nature does not grow overnight. Strong roots come first.</p>
-                <p>TSG is inspired by the philosophy of a tree: Roots represent foundations and values, Trunk represents stability and resilience, Branches represent utility, community, and expansion, Leaves represent users and contributors.</p>
-                <h3>Our Principles</h3>
-                <ol>
-                    <li>Long-Term Over Short-Term</li>
-                    <li>Transparency as a Foundation</li>
-                    <li>Community as the Ecosystem</li>
-                    <li>Balance Over Excess</li>
-                    <li>Utility Before Speculation</li>
-                </ol>
-            </div>
+            <h2 class="en">Vision & Mission</h2>
+            <h2 class="id" style="display:none;">Visi & Misi</h2>
+            <h3 class="en">Vision</h3>
+            <h3 class="id" style="display:none;">Visi</h3>
+            <p class="en">Building a sustainable Web3 ecosystem inspired by green energy and natural balance, with a focus on long-term stability, real utility, and positive value for the global community.</p>
+            <p class="id" style="display:none;">Membangun ekosistem Web3 berkelanjutan yang terinspirasi dari energi hijau dan keseimbangan alam, dengan fokus pada stabilitas jangka panjang, utilitas nyata, dan nilai positif bagi komunitas global.</p>
+            <h3 class="en">Mission</h3>
+            <h3 class="id" style="display:none;">Misi</h3>
+            <ol class="en">
+                <li>Building a sustainable Web3 ecosystem with a tree philosophy.</li>
+                <li>Connecting blockchain with the concepts of green energy and environmental education.</li>
+                <li>Developing nature-themed utilities: tree NFTs, reward systems, airdrops, and mini-games.</li>
+                <li>Creating a “digital forest” where every holder is an important part of the growth.</li>
+                <li>Maintaining a balance between growth, utility, and price stability.</li>
+                <li>Bringing the visual and philosophical values of nature to the digital world.</li>
+            </ol>
+            <ol class="id" style="display:none;">
+                <li>Membangun ekosistem Web3 berkelanjutan dengan filosofi pohon.</li>
+                <li>Menghubungkan blockchain dengan konsep energi hijau dan pendidikan lingkungan.</li>
+                <li>Mengembangkan utilitas bertema alam: NFT pohon, sistem reward, airdrop, dan mini-game.</li>
+                <li>Menciptakan “hutan digital” di mana setiap holder menjadi bagian penting dari pertumbuhan.</li>
+                <li>Menjaga keseimbangan antara pertumbuhan, utilitas, dan stabilitas harga.</li>
+                <li>Membawa nilai visual dan filosofis alam ke dunia digital.</li>
+            </ol>
         </div>
     </section>
 
-    <section id="vision">
+    <!-- Trust & Transparency -->
+    <section class="section" id="trust">
         <div class="container">
-            <h2>Vision & Mission</h2>
-            <div class="section-content">
-                <h3>Vision</h3>
-                <p>Building a sustainable Web3 ecosystem inspired by green energy and natural balance, with a focus on long-term stability, real utility, and positive value for the global community.</p>
-                <h3>Mission</h3>
-                <ol>
-                    <li>Building a sustainable Web3 ecosystem with a tree philosophy.</li>
-                    <li>Connecting blockchain with the concepts of green energy and environmental education.</li>
-                    <li>Developing nature-themed utilities: tree NFTs, reward systems, airdrops, and mini-games.</li>
-                    <li>Creating a “digital forest” where every holder is an important part of the growth.</li>
-                    <li>Maintaining a balance between growth, utility, and price stability.</li>
-                    <li>Bringing the visual and philosophical values of nature to the digital world.</li>
-                </ol>
+            <h2 class="en">Why Trust TSG?</h2>
+            <h2 class="id" style="display:none;">Mengapa Percaya TSG?</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3 class="en">Long-term Focus</h3>
+                    <h3 class="id" style="display:none;">Fokus Jangka Panjang</h3>
+                    <p class="en">No hype or false promises — we grow slowly and strongly like a tree.</p>
+                    <p class="id" style="display:none;">Tanpa hype atau janji palsu — kami tumbuh perlahan dan kuat seperti pohon.</p>
+                </div>
+                <div class="card">
+                    <h3 class="en">Transparency</h3>
+                    <h3 class="id" style="display:none;">Transparansi</h3>
+                    <p class="en">Team tokens locked, clear allocation, open communication in community channels.</p>
+                    <p class="id" style="display:none;">Token tim terkunci, alokasi jelas, komunikasi terbuka di kanal komunitas.</p>
+                </div>
+                <div class="card">
+                    <h3 class="en">Community Driven</h3>
+                    <h3 class="id" style="display:none;">Didorong Komunitas</h3>
+                    <p class="en">Active holders receive rewards; future governance will give voting rights.</p>
+                    <p class="id" style="display:none;">Holder aktif menerima reward; governance masa depan akan memberikan hak suara.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contract">
+    <!-- Contract Information -->
+    <section class="section section-alt" id="contract">
         <div class="container">
-            <h2>Contract Information</h2>
-            <div class="section-content">
-                <p><strong>Network:</strong> Monad</p>
-                <p><strong>Token Type:</strong> ERC-20</p>
-                <p><strong>Name:</strong> Tree Soul Genesis</p>
-                <p><strong>Symbol:</strong> TSG</p>
-                <p><strong>Decimals:</strong> 18</p>
-                <p><strong>Total Supply:</strong> 93,000,000 TSG</p>
-                <p><strong>Contract Address:</strong><br>0x053686b5b9Fd004f17f042e553d14DC0C56C108A</p>
-                <p><strong>Liquidity Lock:</strong><br><a href="" target="_blank">View Lock</a></p>
-                <p><strong>Burn Wallet / TX:</strong><br></p>
-            </div>
+            <h2 class="en">Contract Information</h2>
+            <h2 class="id" style="display:none;">Informasi Kontrak</h2>
+            <ul>
+                <li><strong>Network:</strong> Monad</li>
+                <li><strong>Token Type:</strong> ERC-20</li>
+                <li><strong>Name:</strong> Tree Soul Genesis</li>
+                <li><strong>Symbol:</strong> TSG</li>
+                <li><strong>Decimals:</strong> 18</li>
+                <li><strong>Total Supply:</strong> 93,000,000 TSG</li>
+                <li><strong>Contract Address:</strong> 0x053686b5b9Fd004f17f042e553d14DC0C56C108A</li>
+                <li><strong>Liquidity Lock:</strong> <a href="" target="_blank" rel="noopener">View on UNCX</a></li>
+                <li><strong>Burn Transaction:</strong> <a href="" target="_blank" rel="noopener">View Burn TX</a></li>
+            </ul>
         </div>
     </section>
 
-    <section id="tokenomics">
+    <!-- Tokenomics -->
+    <section class="section" id="tokenomics">
         <div class="container">
             <h2>Tokenomics</h2>
-            <div class="section-content">
-                <p>Distribution is made to maintain long-term stability & organic growth.</p>
-                <table>
+            <table>
+                <thead>
                     <tr><th>Category</th><th>Allocation</th><th>Amount</th></tr>
+                </thead>
+                <tbody>
                     <tr><td>💧 Liquidity</td><td>50%</td><td>43,000,000</td></tr>
                     <tr><td>👥 Marketing & Partnership</td><td>10%</td><td>10,000,000</td></tr>
                     <tr><td>⚙️ Future Development</td><td>10%</td><td>10,000,000</td></tr>
                     <tr><td>👥 Team (Locked)</td><td>10%</td><td>10,000,000</td></tr>
                     <tr><td>🌳 Community Rewards</td><td>10%</td><td>10,000,000</td></tr>
                     <tr><td>🏛️ Reserve Sustainability Fund</td><td>10%</td><td>10,000,000</td></tr>
-                </table>
-            </div>
+                </tbody>
+            </table>
+            <p>Distribution is made to maintain long-term stability & organic growth.</p>
         </div>
     </section>
 
-    <section id="roadmap">
+    <!-- Roadmap -->
+    <section class="section section-alt" id="roadmap">
         <div class="container">
             <h2>Roadmap</h2>
-            <div class="section-content">
-                <h3>Phase 1 – Foundation</h3>
-                <p>Smart contract deployed • Uniswap Listing • Website v1 • Public whitepaper • Early active community.</p>
-                <h3>Phase 2 – Green Community Growth</h3>
-                <p>Web3 Education + Green Energy • Reveal NFT tree • Growth reward system • Small-medium partnership.</p>
-                <h3>Phase 3 – Ecosystem Utilities</h3>
-                <p>NFT Launch • Airdrop Season 1 • CoinMarketCap & CoinGecko Listings • Expansion of the Asian community.</p>
-                <h3>Phase 4 – Expansion & Sustainability</h3>
-                <p>Green energy mini-game • Mini marketplace • Global partnership • Feature upgrades.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="ecosystem">
-        <div class="container">
-            <h2>Ecosystem Overview</h2>
-            <div class="section-content">
-                <p>The TSG ecosystem includes interconnected elements designed to create a complete digital green ecosystem:</p>
-                <div class="ecosystem-diagram">
-                    <strong>TSG Token (Core)</strong><br>↓<br>
-                    Tree Soul NFT Collection • Growth Reward System • Governance (coming soon)<br>↓<br>
-                    Green energy mini-game • Mini marketplace (future)<br><br>
-                    All components support stability, utility, and community participation.
+            <div class="grid">
+                <div class="card">
+                    <h3>Phase 1 — Foundation</h3>
+                    <ul>
+                        <li>Smart contract deployed</li>
+                        <li>Uniswap Listing</li>
+                        <li>Website v1</li>
+                        <li>Public whitepaper</li>
+                        <li>Early active community</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Phase 2 — Green Community Growth</h3>
+                    <ul>
+                        <li>Web3 Education + Green Energy</li>
+                        <li>Reveal NFT tree</li>
+                        <li>Growth reward system</li>
+                        <li>Small-medium partnership</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Phase 3 — Ecosystem Utilities</h3>
+                    <ul>
+                        <li>NFT Launch</li>
+                        <li>Airdrop Season 1</li>
+                        <li>CoinMarketCap & CoinGecko Listings</li>
+                        <li>Expansion of the Asian community</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Phase 4 — Expansion & Sustainability</h3>
+                    <ul>
+                        <li>Green energy mini-game</li>
+                        <li>Mini marketplace</li>
+                        <li>Global partnership</li>
+                        <li>Feature upgrades</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="utility">
+    <!-- Ecosystem Overview & Diagram -->
+    <section class="section" id="ecosystem">
         <div class="container">
-            <h2>Token Utility</h2>
-            <div class="section-content">
-                <ol>
-                    <li><strong>Community Rewards</strong> – Active holders get Growth Points, airdrops, and special rewards.</li>
-                    <li><strong>Ecosystem Access</strong> – TSG is used for NFT mint, in-game currency, marketplace fees, and governance voting.</li>
-                    <li><strong>Staking & Growth (future)</strong> – Holders can “grow trees” for incremental rewards.</li>
-                    <li><strong>Governance Rights</strong> – Holders help decide the direction of the project through community voting.</li>
-                </ol>
+            <h2 class="en">Ecosystem Overview</h2>
+            <h2 class="id" style="display:none;">Ikhtisar Ekosistem</h2>
+            <p class="en">The TSG ecosystem includes interconnected elements designed to create a complete digital green forest:</p>
+            <p class="id" style="display:none;">Ekosistem TSG mencakup elemen-elemen yang saling terhubung untuk menciptakan hutan digital hijau yang lengkap:</p>
+            <ul>
+                <li>TSG Token (core ecosystem)</li>
+                <li>Tree Soul NFT Collection</li>
+                <li>Growth Reward System</li>
+                <li>Governance (coming soon)</li>
+                <li>Green energy mini-game (future)</li>
+                <li>Mini marketplace (future)</li>
+            </ul>
+            <div class="diagram">
+                <div class="diagram-box">TSG Token</div>
+                <div class="arrow">↓</div>
+                <div class="diagram-box">Staking & Growth<br>(Future)</div>
+                <div class="arrow">→</div>
+                <div class="diagram-box">NFT Mint</div>
+                <div class="arrow">→</div>
+                <div class="diagram-box">Rewards & Airdrops</div>
+                <div class="arrow">↓</div>
+                <div class="diagram-box">Mini-Game &<br>Marketplace (Future)</div>
+                <div class="arrow">↔</div>
+                <div class="diagram-box">Governance<br>Voting (Future)</div>
             </div>
         </div>
     </section>
 
-    <section id="governance">
+    <!-- Token Utility -->
+    <section class="section section-alt" id="utility">
         <div class="container">
-            <h2>Governance & DAO (Planned)</h2>
-            <div class="section-content">
-                <p>Governance in Tree Soul Genesis is designed to reflect its philosophy: balanced growth through collective responsibility.</p>
-                <p>Governance will be introduced progressively:</p>
-                <ul>
-                    <li><strong>Phase 1</strong> – Community Signaling (polls, discussions)</li>
-                    <li><strong>Phase 2</strong> – On-Chain Voting (token-based)</li>
-                    <li><strong>Phase 3</strong> – DAO Operations (fund allocation, feature decisions)</li>
-                </ul>
-                <p>Governance scope includes ecosystem priorities, utility upgrades, and community initiatives — never price manipulation or short-term speculation.</p>
-            </div>
+            <h2 class="en">Token Utility</h2>
+            <h2 class="id" style="display:none;">Utilitas Token</h2>
+            <ol>
+                <li class="en">Community Rewards — Active holders get Growth Points, airdrops, and special rewards.</li>
+                <li class="id" style="display:none;">Reward Komunitas — Holder aktif mendapatkan Growth Points, airdrop, dan reward khusus.</li>
+                <li class="en">Ecosystem Access — TSG is used for NFT mint, in-game currency, marketplace fees, and governance voting.</li>
+                <li class="id" style="display:none;">Akses Ekosistem — TSG digunakan untuk mint NFT, mata uang dalam game, biaya marketplace, dan voting governance.</li>
+                <li class="en">Staking & Growth (future) — Holders can “grow trees” for incremental rewards.</li>
+                <li class="id" style="display:none;">Staking & Pertumbuhan (masa depan) — Holder dapat “menumbuhkan pohon” untuk reward bertahap.</li>
+                <li class="en">Governance Rights — Holders help decide project direction through community voting (coming soon).</li>
+                <li class="id" style="display:none;">Hak Governance — Holder membantu menentukan arah proyek melalui voting komunitas (segera hadir).</li>
+            </ol>
         </div>
     </section>
 
-    <section id="team">
+    <!-- Team -->
+    <section class="section" id="team">
         <div class="container">
             <h2>Team</h2>
-            <div class="team-grid">
+            <div class="grid grid-3">
                 <div class="team-card">
-                    <img src="https://i.imgur.com/hbVKff2.jpeg" alt="Resa Alvaro putra Alfarizii">
-                    <h3>Resa Alvaro putra Alfarizii</h3>
-                    <p>Founder & CEO<br>Building TSG's vision with a philosophy of nature and green energy.</p>
+                    <img src="https://i.imgur.com/hbVKff2.jpeg" alt="Resa Alvaro putra Alfarizii" class="round">
+                    <h3>Founder & CEO</h3>
+                    <p>Resa Alvaro putra Alfarizii</p>
+                    <p class="en">Building TSG's vision with a philosophy of nature and green energy.</p>
+                    <p class="id" style="display:none;">Membangun visi TSG dengan filosofi alam dan energi hijau.</p>
                 </div>
                 <div class="team-card">
-                    <img src="https://i.imgur.com/tRnCYlm.png" alt="Henry Gerald">
-                    <h3>Henry Gerald</h3>
-                    <p>Lead Developer & Community Manager</p>
+                    <img src="https://i.imgur.com/tRnCYlm.png" alt="Henry Gerlad" class="round">
+                    <h3>Lead Developer & Community Manager</h3>
+                    <p>Henry Gerlad</p>
                 </div>
                 <div class="team-card">
-                    <img src="https://i.imgur.com/NjsgamX.png" alt="Seralune Khoirunnisa">
-                    <h3>Seralune Khoirunnisa</h3>
-                    <p>Creative Designer</p>
+                    <img src="https://i.imgur.com/NjsgamX.png" alt="Seralune Khoirunnisa" class="round">
+                    <h3>Creative Designer</h3>
+                    <p>Seralune Khoirunnisa</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="partners">
+    <!-- Genesis NFT -->
+    <section class="section section-alt" id="nft">
         <div class="container">
-            <h2>Partners & Collaborations</h2>
-            <div class="section-content">
-                <p>Partnerships will be announced as the ecosystem matures. We are open to meaningful, long-term collaborations that align with our values of sustainability and transparency.</p>
-            </div>
+            <h2>TSG Genesis NFT</h2>
+            <img src="" alt="TSG Genesis NFT" style="max-width:600px; margin:32px auto; border-radius:12px;">
+            <p class="en">The TSG Genesis NFT represents the first on-chain identity of the Tree Soul Genesis ecosystem. It is created as a symbolic foundation, not as a speculative asset. Limited supply on Monad network.</p>
+            <p class="id" style="display:none;">TSG Genesis NFT mewakili identitas on-chain pertama dari ekosistem Tree Soul Genesis. Dibuat sebagai fondasi simbolis, bukan aset spekulatif. Supply terbatas di jaringan Monad.</p>
+            <p style="margin-top:24px;">
+                <a href="https://monadscan.com/token/0x06665110f3bCA9c671AA469c6062865483F0D3aF" target="_blank" rel="noopener" class="button">View on MonadScan</a>
+                <a href="https://magiceden.io/collections/monad/0x06665110f3bca9c671aa469c6062865483f0d3af" target="_blank" rel="noopener" class="button">View on Magic Eden</a>
+            </p>
         </div>
     </section>
 
-    <section id="faq">
+    <!-- Partners -->
+    <section class="section" id="partners">
         <div class="container">
-            <h2>FAQ</h2>
-            <div class="section-content">
-                <details>
-                    <summary>What is Tree Soul Genesis (TSG)?</summary>
-                    <p>Tree Soul Genesis (TSG) is a Web3 green ecosystem project built on the Monad Network, focused on stability, transparency, and long-term community growth. TSG follows a “grow slow, grow strong” philosophy — just like a tree.</p>
-                </details>
-                <details>
-                    <summary>Is TSG a long-term project?</summary>
-                    <p>Yes. TSG is designed with a gradual and realistic approach, without instant promises. Our long-term focus includes ecosystem stability, active and healthy community, and sustainable development.</p>
-                </details>
-                <details>
-                    <summary>Does TSG promise profits?</summary>
-                    <p>No. TSG is not financial advice and does not guarantee profits. Token value depends on adoption, community activity, and ecosystem development. Always do your own research (DYOR).</p>
-                </details>
-                <details>
-                    <summary>Is the liquidity (LP) safe?</summary>
-                    <p>Liquidity is managed with a long-term stability mindset. Important note: Liquidity is not withdrawn arbitrarily and is handled transparently. Liquidity locking options will be considered as the project matures.</p>
-                </details>
-                <details>
-                    <summary>Why does the largest wallet look so big?</summary>
-                    <p>The largest wallet shown on explorers is the liquidity wallet, not a personal developer wallet. This is a common structure in blockchain projects to maintain market depth and trading stability.</p>
-                </details>
-                <details>
-                    <summary>Is the developer anonymous?</summary>
-                    <p>No. The developer is active and involved in managing the project. Identity is presented responsibly to balance transparency and security during the early development phase.</p>
-                </details>
-                <details>
-                    <summary>Why is the website hosted on GitHub Pages?</summary>
-                    <p>The website is currently hosted on GitHub Pages as an early-stage solution that is free, stable, transparent, and open-source friendly. A custom domain will be introduced in a future phase.</p>
-                </details>
-                <details>
-                    <summary>Will there be NFTs?</summary>
-                    <p>Yes. TSG will introduce Genesis NFTs as early community identity, a symbol of early participation, and access to future utilities.</p>
-                </details>
-                <details>
-                    <summary>Is TSG audited?</summary>
-                    <p>A smart contract audit will be considered once the project reaches a more mature phase and requires additional external validation.</p>
-                </details>
+            <h2 class="en">Partners & Future Collaborations</h2>
+            <h2 class="id" style="display:none;">Partner & Kolaborasi Masa Depan</h2>
+            <p class="en" style="text-align:center; font-size:1.2rem; color:var(--text-secondary);">Partnerships will be announced as the project grows. We are open to collaborations that align with sustainability and green innovation.</p>
+            <p class="id" style="display:none; text-align:center; font-size:1.2rem; color:var(--text-secondary);">Kemitraan akan diumumkan seiring pertumbuhan proyek. Kami terbuka untuk kolaborasi yang selaras dengan keberlanjutan dan inovasi hijau.</p>
+            <div class="grid grid-3" style="margin-top:40px; opacity:0.3;">
+                <div class="card" style="height:120px; display:flex; align-items:center; justify-content:center;">
+                    <p>Future Partner</p>
+                </div>
+                <div class="card" style="height:120px; display:flex; align-items:center; justify-content:center;">
+                    <p>Future Partner</p>
+                </div>
+                <div class="card" style="height:120px; display:flex; align-items:center; justify-content:center;">
+                    <p>Future Partner</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="community">
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+        <div class="container">
+            <h2>🌱 TREE SOUL GENESIS (TSG) — COMMUNITY FAQ</h2>
+            **Summary:**
+❓ What is Tree Soul Genesis (TSG)?
+                <p>Tree Soul Genesis (TSG) is a Web3 green ecosystem project built on the Monad Network, focused on stability, transparency, and long-term community growth.<br>TSG follows a “grow slow, grow strong” philosophy — just like a tree.</p>
+            **Summary:**
+❓ Is TSG a long-term project?
+                <p>Yes. TSG is designed with a gradual and realistic approach, without instant promises. Our long-term focus includes ecosystem stability, active and healthy community, and sustainable development.</p>
+            **Summary:**
+❓ Does TSG promise profits?
+                <p>No. TSG is not financial advice and does not guarantee profits. Token value depends on adoption, community activity, and ecosystem development. Always do your own research (DYOR).</p>
+            **Summary:**
+❓ Is the liquidity (LP) safe?
+                <p>Liquidity is managed with a long-term stability mindset. Currently, liquidity is not locked via a smart contract, however: Liquidity is not withdrawn arbitrarily, it is not used for personal purposes, and all actions are handled transparently. Liquidity locking options will be considered as the project matures.</p>
+            **Summary:**
+❓ Why does the largest wallet look so big?
+                <p>The largest wallet shown on explorers is the liquidity wallet, not a personal developer wallet. This is a common structure in blockchain projects to maintain market depth and trading stability.</p>
+            **Summary:**
+❓ Is the developer anonymous?
+                <p>No. The developer is active and involved in managing the project. Identity is presented responsibly to balance transparency and security during the early development phase.</p>
+            **Summary:**
+❓ Why is the website hosted on GitHub Pages?
+                <p>The website is currently hosted on GitHub Pages as an early-stage solution that is free, stable, transparent and open-source friendly. A custom domain will be introduced in a future phase as the project grows.</p>
+            **Summary:**
+❓ Will there be NFTs?
+                <p>Yes. TSG will introduce Genesis NFTs as early community identity, a symbol of early participation, and access to future utilities. Details will be announced gradually.</p>
+            **Summary:**
+❓ Is TSG audited?
+                <p>A smart contract audit will be considered once the project reaches a more mature phase and requires additional external validation.</p>
+        </div>
+    </section>
+
+    <!-- Footer / Socials + Disclaimer -->
+    <footer id="socials">
         <div class="container">
             <h2>Community & Socials</h2>
             <div class="socials">
-                <a href="https://x.com/tree_genesis" target="_blank">Twitter: @tree_genesis</a>
-                <a href="https://t.me/treeSoulGenesis" target="_blank">Telegram: @TREESOULGENESIS</a>
-                <a href="https://instagram.com/treesoulgenesis" target="_blank">Instagram: @treesoulgenesis</a>
-                <a href="https://tiktok.com/@treesoulgenesis" target="_blank">TikTok: @treesoulgenesis</a>
-                <a href="https://facebook.com/treesoulgenesis" target="_blank">Facebook: Tree Soul Genesis</a>
-                <a href="https://medium.com/@treesoulgenesis" target="_blank">Medium: @treesoulgenesis</a>
-                <a href="https://discord.gg/tsgfamily" target="_blank">Discord: TSG FAMILY</a>
-                <a href="mailto:treesoulgenesis@gmail.com">Email: treesoulgenesis@gmail.com</a>
+                <a href="https://www.youtube.com/@TreesoulGenesis" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+                <a href="https://x.com/tree_genesis" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                <a href="https://t.me/treeSoulGenesis" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/treesoulgenesis" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@treesoulgenesis" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+                <a href="https://facebook.com/treesoulgenesis" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                <a href="https://medium.com/@treesoulgenesis" target="_blank" rel="noopener"><i class="fab fa-medium"></i></a>
+                <a href="https://discord.gg/TSGFAMILY" target="_blank" rel="noopener"><i class="fab fa-discord"></i></a>
             </div>
-        </div>
-    </section>
-
-    <section id="disclaimer">
-        <div class="container">
-            <h2>Legal Disclaimer</h2>
-            <div class="section-content">
-                <p>TSG is a high-risk digital asset. There is no guarantee of profit. TSG is not a stock or security. All plans are subject to change based on the needs of the ecosystem.</p>
-                <p>Participation involves risk. Always do your own research (DYOR).</p>
+            <p>Email: <a href="mailto:treesoulgenesis@gmail.com">treesoulgenesis@gmail.com</a> | <a href="mailto:tsgproject@proton.me">tsgproject@proton.me</a></p>
+            <div style="max-width:800px; margin:60px auto 0; padding:32px; background:#111; border-radius:12px;">
+                <h3>Legal Disclaimer</h3>
+                <p>TSG is a high-risk digital asset. There is no guarantee of profit. TSG is not a stock or security. All plans are subject to change based on the needs of the ecosystem.<br><br>Participation involves risk. Always do your own research (DYOR).</p>
             </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2026 Tree Soul Genesis (TSG). Building responsibly.</p>
         </div>
     </footer>
+
+    <script>
+        function showLang(lang) {
+            document.querySelectorAll('.en, .id').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.' + lang).forEach(el => el.style.display = 'block');
+            document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.lang-toggle button[onclick="showLang('${lang}')"]`).classList.add('active');
+        }
+        // Default to English
+        showLang('en');
+    </script>
 </body>
-    </html>
+                        </html>
+          
